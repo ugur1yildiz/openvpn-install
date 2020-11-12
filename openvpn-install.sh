@@ -39,9 +39,10 @@ elif [[ -e /etc/fedora-release ]]; then
 	os_version=$(grep -oE '[0-9]+' /etc/fedora-release | head -1)
 	group_name="nobody"
 else
-	echo "This installer seems to be running on an unsupported distribution.
-Supported distributions are Ubuntu, Debian, CentOS, and Fedora."
-	exit
+	echo "Amazon -> centos 7"
+	os="centos"
+	os_version="7"
+	group_name="nobody"	
 fi
 
 if [[ "$os" == "ubuntu" && "$os_version" -lt 1804 ]]; then
